@@ -11,9 +11,13 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <div className="section-divider" />
         <About />
+        <div className="section-divider" />
         <Talks />
+        <div className="section-divider" />
         <Videos />
+        <div className="section-divider" />
         <Contact />
       </main>
     </>

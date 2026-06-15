@@ -41,8 +41,9 @@ export function Talks() {
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   return (
-    <section id="talks" className="py-24 px-6 bg-bg-surface/30">
-      <div className="max-w-5xl mx-auto">
+    <section id="talks" className="relative py-24 px-6 bg-bg-surface/30 overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-accent-purple/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="relative max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
           <span className="h-px w-8 bg-accent-blue" />
           <span className="text-xs text-accent-glow font-bold tracking-widest uppercase">Conference Talks</span>
@@ -60,7 +61,6 @@ export function Talks() {
                 <div className={`rounded-2xl p-6 border transition-all ${t.highlight ? "bg-bg-elevated border-accent-gold/30 shadow-lg shadow-accent-gold/10" : "bg-bg-surface border-bg-border hover:border-accent-blue/30"}`}>
                   <div className="flex flex-wrap items-center gap-2 mb-3">
                     <span className={`text-xs font-bold uppercase tracking-widest ${t.highlight ? "text-accent-gold" : "text-accent-glow"}`}>{t.event}</span>
-                    <span className="text-xs px-2 py-0.5 rounded-full border border-bg-border text-txt-muted">{t.type}</span>
                     {t.highlight && <span className="text-xs px-2 py-0.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold font-bold">⭐ Keynote</span>}
                   </div>
                   <h3 className="font-display text-lg font-semibold text-txt-primary mb-3">{t.title}</h3>

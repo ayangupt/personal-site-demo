@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          base:     "#050A14",
-          surface:  "#0C1626",
-          elevated: "#132035",
-          border:   "#1E3054",
+          base:     "#0a1120",
+          surface:  "#111e34",
+          elevated: "#1a2d4a",
+          border:   "#243a5c",
         },
         accent: {
           blue:   "#2F80ED",
@@ -34,6 +34,7 @@ const config: Config = {
         "gradient-shift": "gradientShift 12s ease infinite",
         "fade-up":        "fadeUp 0.6s ease forwards",
         "pulse-glow":     "pulseGlow 3s ease-in-out infinite",
+        "marquee":        "marquee 30s linear infinite",
       },
       keyframes: {
         gradientShift: {
@@ -47,6 +48,10 @@ const config: Config = {
         pulseGlow: {
           "0%, 100%": { boxShadow: "0 0 12px 2px rgba(212,160,23,0.4)" },
           "50%":      { boxShadow: "0 0 24px 6px rgba(212,160,23,0.7)" },
+        },
+        marquee: {
+          "0%":   { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
       backgroundSize: {

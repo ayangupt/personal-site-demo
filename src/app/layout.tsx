@@ -15,12 +15,12 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Ayan Gupta — Cloud Advocate at Microsoft",
+  title: "Ayan Gupta — AI Developer Advocate",
   description:
-    "Ayan Gupta is a Cloud Advocate at Microsoft, Forbes 30 Under 30, and conference speaker focused on AI, developer tools, and modern application development.",
+    "Ayan Gupta is an AI Developer Advocate at Microsoft and GitHub, Forbes 30 Under 30, and conference speaker focused on AI, developer tools, and modern application development.",
   openGraph: {
     title: "Ayan Gupta",
-    description: "Cloud Advocate at Microsoft · Forbes 30U30 · Conference Speaker",
+    description: "AI Developer Advocate @ GitHub · Forbes 30U30 · Conference Speaker",
     images: [{ url: "https://github.com/ayangupt.png" }],
   },
 };

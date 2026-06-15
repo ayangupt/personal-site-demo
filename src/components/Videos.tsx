@@ -11,8 +11,9 @@ export function Videos() {
   const featured = videos.find(v => v.featured)!;
   const rest = videos.filter(v => !v.featured);
   return (
-    <section id="videos" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="videos" className="relative py-24 px-6 overflow-hidden">
+      <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-accent-blue/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="relative max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
           <span className="h-px w-8 bg-accent-blue" />
           <span className="text-xs text-accent-glow font-bold tracking-widest uppercase">Videos</span>
