@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
-import StyledComponentsRegistry from "@/lib/registry";
+import { Inter, Sora } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Ayan Gupta — Cloud Advocate at Microsoft",
@@ -12,16 +25,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-color-mode="dark" data-dark-theme="dark">
-      <body style={{ margin: 0, background: "#0d1117" }}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
+    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
+      <body className="font-sans bg-bg-base text-txt-primary">{children}</body>
     </html>
   );
 }

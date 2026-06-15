@@ -1,24 +1,21 @@
-import { Hero } from "@/components/Hero";
-import { Talks } from "@/components/Talks";
-import { Videos } from "@/components/Videos";
-import { Box } from "@primer/react";
+import { Nav }     from "@/components/Nav";
+import { Hero }    from "@/components/Hero";
+import { About }   from "@/components/About";
+import { Talks }   from "@/components/Talks";
+import { Videos }  from "@/components/Videos";
+import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
-    <Box
-      sx={{
-        maxWidth: 900,
-        mx: "auto",
-        px: [3, 4],
-        py: 5,
-        display: "flex",
-        flexDirection: "column",
-        gap: 5,
-      }}
-    >
-      <Hero />
-      <Talks />
-      <Videos />
-    </Box>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Talks />
+        <Videos />
+        <Contact />
+      </main>
+    </>
   );
 }

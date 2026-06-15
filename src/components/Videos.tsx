@@ -1,109 +1,48 @@
 "use client";
 
-import { ThemeProvider, BaseStyles, Box, Heading, Text, Link } from "@primer/react";
-
 const videos = [
-  {
-    title: "Modernize Java Apps with AI",
-    url: "https://www.youtube.com/watch?v=9gmp_ADmRuE",
-    embedUrl: "https://www.youtube.com/embed/9gmp_ADmRuE",
-  },
-  {
-    title: "Modernize Java Apps in Days with GitHub Copilot",
-    url: "https://www.youtube.com/watch?v=r3iTEqujO1s",
-    embedUrl: "https://www.youtube.com/embed/r3iTEqujO1s",
-  },
-  {
-    title: "Build with Copilot CLI",
-    url: "https://www.youtube.com/watch?v=c2QeGuWPnSw",
-    embedUrl: "https://www.youtube.com/embed/c2QeGuWPnSw",
-  },
-  {
-    title: "Building the Agentic Future Together (JDConf 2026 Keynote)",
-    url: "https://www.youtube.com/live/cJ1odDNflEA",
-    embedUrl: "https://www.youtube.com/embed/cJ1odDNflEA",
-  },
+  { title: "Building the Agentic Future Together", subtitle: "JDConf 2026 Opening Keynote", url: "https://www.youtube.com/live/cJ1odDNflEA?t=449", embedUrl: "https://www.youtube.com/embed/cJ1odDNflEA?start=449", featured: true },
+  { title: "Modernize Java Apps with AI", url: "https://www.youtube.com/watch?v=9gmp_ADmRuE", embedUrl: "https://www.youtube.com/embed/9gmp_ADmRuE", featured: false },
+  { title: "Modernize Java Apps in Days with GitHub Copilot", url: "https://www.youtube.com/watch?v=r3iTEqujO1s", embedUrl: "https://www.youtube.com/embed/r3iTEqujO1s", featured: false },
+  { title: "Build with Copilot CLI", url: "https://www.youtube.com/watch?v=c2QeGuWPnSw", embedUrl: "https://www.youtube.com/embed/c2QeGuWPnSw", featured: false },
 ];
 
-function VideoCard({ video }: { video: (typeof videos)[0] }) {
-  return (
-    <Box
-      sx={{
-        border: "1px solid",
-        borderColor: "border.default",
-        borderRadius: 2,
-        overflow: "hidden",
-        bg: "canvas.subtle",
-      }}
-    >
-      <Box
-        as="div"
-        sx={{
-          position: "relative",
-          paddingBottom: "56.25%",
-          height: 0,
-          overflow: "hidden",
-          bg: "canvas.default",
-        }}
-      >
-        <Box
-          as="iframe"
-          src={video.embedUrl}
-          title={video.title}
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            border: "none",
-          }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          loading="lazy"
-        />
-      </Box>
-      <Box sx={{ p: 3 }}>
-        <Link href={video.url} target="_blank" sx={{ fontSize: 1, fontWeight: "semibold", color: "fg.default" }}>
-          {video.title}
-        </Link>
-      </Box>
-    </Box>
-  );
-}
-
 export function Videos() {
+  const featured = videos.find(v => v.featured)!;
+  const rest = videos.filter(v => !v.featured);
   return (
-    <ThemeProvider colorMode="night">
-      <BaseStyles>
-        <Box>
-          <Heading
-            as="h2"
-            sx={{
-              fontSize: 3,
-              fontWeight: "semibold",
-              color: "fg.default",
-              mb: 3,
-              pb: 2,
-              borderBottom: "1px solid",
-              borderColor: "border.default",
-            }}
-          >
-            🎥 Videos
-          </Heading>
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: ["1fr", "1fr 1fr"],
-              gap: 3,
-            }}
-          >
-            {videos.map((v) => (
-              <VideoCard key={v.url} video={v} />
-            ))}
-          </Box>
-        </Box>
-      </BaseStyles>
-    </ThemeProvider>
+    <section id="videos" className="py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex items-center gap-3 mb-12">
+          <span className="h-px w-8 bg-accent-blue" />
+          <span className="text-xs text-accent-glow font-bold tracking-widest uppercase">Videos</span>
+        </div>
+        <h2 className="font-display text-3xl font-bold text-txt-primary mb-12">Watch it in action.</h2>
+        <div className="mb-6 rounded-2xl overflow-hidden border border-accent-gold/20 bg-bg-surface shadow-xl shadow-accent-gold/5">
+          <div className="aspect-video">
+            <iframe src={featured.embedUrl} title={featured.title} className="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy" />
+          </div>
+          <div className="px-5 py-4 flex items-center justify-between">
+            <div>
+              <p className="font-semibold text-txt-primary">{featured.title}</p>
+              {featured.subtitle && <p className="text-sm text-accent-gold mt-0.5">⭐ {featured.subtitle}</p>}
+            </div>
+            <a href={featured.url} target="_blank" rel="noreferrer" className="text-sm text-accent-glow font-semibold hover:text-white transition-colors whitespace-nowrap ml-4">YouTube →</a>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-3 gap-5">
+          {rest.map(v => (
+            <div key={v.url} className="group rounded-2xl overflow-hidden border border-bg-border bg-bg-surface hover:border-accent-blue/30 transition-colors">
+              <div className="aspect-video">
+                <iframe src={v.embedUrl} title={v.title} className="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy" />
+              </div>
+              <div className="px-4 py-3">
+                <a href={v.url} target="_blank" rel="noreferrer" className="text-sm font-semibold text-txt-primary group-hover:text-accent-glow transition-colors leading-snug">{v.title}</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
