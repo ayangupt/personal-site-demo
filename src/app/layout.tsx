@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,27 +10,32 @@ const inter = Inter({
   display: "swap",
 });
 
-const sora = Sora({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  variable: "--font-sora",
+  variable: "--font-newsreader",
   display: "swap",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Ayan Gupta — Cloud Advocate at Microsoft",
+  title: "Ayan Gupta",
   description:
-    "Ayan Gupta is a Cloud Advocate at Microsoft, Forbes 30 Under 30, and conference speaker focused on AI, developer tools, and modern application development.",
+    "AI Developer Advocate at GitHub. Speaker, builder, and open-source contributor.",
   openGraph: {
     title: "Ayan Gupta",
-    description: "Cloud Advocate at Microsoft · Forbes 30U30 · Conference Speaker",
+    description: "AI Developer Advocate at GitHub",
     images: [{ url: "https://github.com/ayangupt.png" }],
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
-      <body className="font-sans bg-bg-base text-txt-primary">{children}</body>
+    <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
+      <body className="font-sans bg-bg-base text-txt-primary">
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
