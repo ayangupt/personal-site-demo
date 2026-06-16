@@ -49,7 +49,7 @@ function LogoMarquee() {
   };
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden w-full">
       <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-bg-base to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-bg-base to-transparent z-10 pointer-events-none" />
       <div
@@ -85,7 +85,7 @@ export default function Home() {
       <section className="min-h-[85vh] flex items-center px-6">
         <div className="max-w-3xl mx-auto w-full py-16 md:py-24">
           <div className="flex flex-col-reverse md:flex-row items-start md:items-center gap-8 md:gap-12">
-            <div className="flex-1">
+            <div className="w-full md:flex-1 min-w-0">
               <h1 className="font-display text-4xl md:text-5xl text-txt-primary leading-tight mb-4 italic">
                 Ayan Gupta
               </h1>
