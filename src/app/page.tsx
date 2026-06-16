@@ -117,7 +117,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="flex-shrink-0 w-[220px] h-[280px] rounded-2xl overflow-hidden">
+            <div className="mx-auto md:mx-0 flex-shrink-0 w-[240px] h-[300px] sm:w-[260px] sm:h-[320px] md:w-[220px] md:h-[280px] rounded-2xl overflow-hidden">
               <Image
                 src="/ayan-hero.png?v=10"
                 alt="Ayan Gupta"
