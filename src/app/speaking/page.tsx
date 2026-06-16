@@ -40,7 +40,7 @@ const talks = [
 export default function SpeakingPage() {
   return (
     <main className="pt-14">
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-display text-3xl md:text-4xl text-txt-primary italic mb-4">
             Speaking
@@ -53,7 +53,7 @@ export default function SpeakingPage() {
           <div className="space-y-12">
             {talks.map((talk, i) => (
               <article key={i} className="group">
-                <div className="flex items-baseline gap-4 mb-2">
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-2">
                   <span className="text-xs text-txt-dim font-mono">{talk.year}</span>
                   <span className="text-sm text-accent-warm">{talk.event}</span>
                   <span className="text-xs text-txt-dim">{talk.type}</span>
