@@ -83,8 +83,8 @@ export default function Home() {
   return (
     <main className="pt-14">
       <section className="min-h-[85vh] flex items-center px-6">
-        <div className="max-w-3xl mx-auto w-full py-24">
-          <div className="flex flex-col-reverse md:flex-row items-start md:items-center gap-12">
+        <div className="max-w-3xl mx-auto w-full py-16 md:py-24">
+          <div className="flex flex-col-reverse md:flex-row items-start md:items-center gap-8 md:gap-12">
             <div className="flex-1">
               <h1 className="font-display text-4xl md:text-5xl text-txt-primary leading-tight mb-4 italic">
                 Ayan Gupta

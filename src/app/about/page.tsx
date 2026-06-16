@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="pt-14">
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-12 items-start mb-16">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start mb-16">
             <Image
               src="https://github.com/ayangupt.png"
               alt="Ayan Gupta"

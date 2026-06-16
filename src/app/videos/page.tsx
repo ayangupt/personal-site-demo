@@ -38,7 +38,7 @@ export default function VideosPage() {
 
   return (
     <main className="pt-14">
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-display text-3xl md:text-4xl text-txt-primary italic mb-4">
             Videos
