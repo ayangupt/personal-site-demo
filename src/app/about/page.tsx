@@ -16,7 +16,7 @@ export default function AboutPage() {
               alt="Ayan Gupta"
               width={220}
               height={220}
-              className="rounded-2xl flex-shrink-0"
+              className="rounded-2xl flex-shrink-0 mx-auto md:mx-0 w-[180px] h-[180px] md:w-[220px] md:h-[220px]"
             />
             <div>
               <h1 className="font-display text-3xl md:text-4xl text-txt-primary italic mb-6">
